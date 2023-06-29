@@ -95,6 +95,10 @@
 		if (e.deltaY > 0) {
 			scdir = 'up';
 		}
+		spinLogoBg(
+			"url('assests/images/sassi-1.webp')",
+			"url('assests/images/sassi-2.webp')"
+		);
 		e.stopPropagation();
 	});
 	container.addEventListener('wheel', _scrollY);

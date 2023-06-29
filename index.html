@@ -86,11 +86,13 @@
 <!-- floating logo start -->
 
 <div class="floating-logo_section">
-  <div class="logo-bg" style="background-image: url('assests/images/sassi-1.webp');">
+  <div class="logo-bg" style="background-image: url('assests/images/sassi-1.webp'); background-size: 80%;">
+  </div>
     <div class="floating-logo_wrapper">
       <img src="assests/images/floating-logo.webp" alt="Floating Logo Image" class="floating-logo">
     </div>
-  </div>
+
+  
 </div>
 
 <!-- floating logo end -->
@@ -270,14 +272,22 @@
 
     <!-- js -->
     <script src="./assests/js/jquery-3.7.0.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer>
+      function spinLogoBg(
+        background_image_1 = 'none',
+        background_image_2 = 'none'
+      ){
+        const timeLine = gsap.timeline();
+        timeLine
+          .to(".logo-bg", {rotation: 100, duration: 1, backgroundImage: background_image_1, backgroundSize: "150%" })
+          .to(".logo-bg", { opacity: 0, duration: 1, delay: -0.5})
+          .to(".logo-bg", { duration:0.3, backgroundImage: background_image_2})
+          .to(".logo-bg", { opacity:1, duration:0.5, ease: 'power2.out', delay: -0.1})
+      }
+    </script>
     <script src="./assests/js/one-scroll.js"></script>
     <script src="./assests/js/all.js"></script>
     <script src="./assests/js/custom.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script defer>
-      $(document).ready(function(){
-
-      });
-    </script>
   </body>
 </html>
